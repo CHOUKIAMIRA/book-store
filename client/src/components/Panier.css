@@ -1,0 +1,118 @@
+.panier-container {
+   
+    padding: 20px;
+    max-width: 800px; /* Limiter la largeur du panier */
+    margin: auto; /* Centrer le panier horizontalement */
+    background-color: #f9f9f9; /* Couleur de fond claire */
+    border-radius: 8px; /* Bordures arrondies */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.panier-content {
+ 
+    display: flex;
+    justify-content: space-between; /* Pour espacer les produits et le résumé */
+    gap: 20px; /* Espace entre les colonnes */
+}
+.panier-item {
+    display: flex;
+    justify-content: space-around; /* Espace autour des éléments */
+    align-items: center; /* Aligne verticalement au centre */
+    padding: 10px; /* Espacement interne */
+    border-bottom: 1px solid #eee; /* Ligne de séparation entre les produits */
+}
+
+.panier-details {
+    flex: 1; /* Permet au texte de prendre l'espace restant */
+    text-align: center; /* Centrer le texte si nécessaire */
+}
+
+/* Optionnel : vous pouvez ajuster la taille de l'image ici */
+.panier-image {
+    width: 70px; /* Ajuster la taille de l'image */
+    height: 70px; /* Ajuster la taille de l'image */
+    border-radius: 5px; /* Bordures arrondies pour les images */
+    margin-right: 15px; /* Espace entre l'image et le texte */
+}
+
+/* Ajustez le style des boutons selon vos besoins */
+
+
+.panier-products {
+    flex: 1; /* Pour occuper tout l'espace disponible */
+    padding: 10px; /* Espacement interne */
+    background-color: #fff; /* Couleur de fond blanche pour les produits */
+    border-radius: 8px; /* Bordures arrondies */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.panier-summary {
+    min-width: 200px; /* Largeur minimale pour le résumé */
+    padding: 20px;
+    background-color: #fff; /* Couleur de fond blanche pour le résumé */
+    border-radius: 8px; /* Bordures arrondies */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.panier-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Suppression des marges par défaut */
+}
+
+.panier-item {
+    display: flex;
+    align-items: center; /* Aligner les éléments au centre verticalement */
+    padding: 10px; /* Espacement interne */
+    border-bottom: 1px solid #eee; /* Ligne de séparation entre les produits */
+}
+
+.panier-item:last-child {
+    border-bottom: none; /* Supprimer la bordure pour le dernier élément */
+}
+
+.panier-image {
+    width: 70px; /* Ajuster la taille de l'image */
+    height: 70px; /* Ajuster la taille de l'image */
+    border-radius: 5px; /* Bordures arrondies pour les images */
+    margin-right: 15px; /* Espace entre l'image et le texte */
+}
+
+.panier-details {
+    flex: 1; /* Permet au texte de prendre l'espace restant */
+}
+
+.remove-button {
+    background-color: #ff4d4d; /* Couleur de fond rouge */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    padding: 8px 12px; /* Espacement interne */
+    cursor: pointer; /* Curseur pointer au survol */
+    border-radius: 5px; /* Bordures arrondies */
+    transition: background-color 0.3s; /* Effet de transition pour le survol */
+}
+
+.remove-button:hover {
+    background-color: #ff1a1a; /* Couleur de fond rouge plus foncé au survol */
+}
+
+.checkout-button {
+    background-color: #4CAF50; /* Couleur de fond verte */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    padding: 10px 15px; /* Espacement interne */
+    cursor: pointer; /* Curseur pointer au survol */
+    border-radius: 5px; /* Bordures arrondies */
+    width: 100%; /* Prendre toute la largeur disponible */
+    transition: background-color 0.3s; /* Effet de transition pour le survol */
+}
+
+.checkout-button:hover {
+    background-color: #45a049; /* Couleur de fond verte plus foncée au survol */
+}
+
+.panier-total {
+    font-weight: bold; /* Mettre le total en gras */
+    font-size: 1.2em; /* Augmenter la taille de la police */
+    margin-top: 10px; /* Espacement au-dessus du total */
+}

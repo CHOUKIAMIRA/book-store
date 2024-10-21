@@ -15,7 +15,7 @@ Router.get(
     // Successful authentication, redirect home.
     console.log(req);
     res.redirect(
-      `http://localhost:3000?email=${req.user.email}&fullname=${req.user.fullname}&secret=${req.user.secret}`
+      `http://localhost:3000/home?email=${req.user.email}&fullname=${req.user.fullname}&secret=${req.user.secret}`
     );
   }
 );

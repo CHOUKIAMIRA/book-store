@@ -1,14 +1,17 @@
 var GoogleStrategy = require("passport-google-oauth20").Strategy;
-const UserModel = require("../models/User.js");
+const UserModel = require("../models/User");
+
 module.exports = (passport) => {
   passport.serializeUser(function (user, done) {
     done(null, user.id);
   });
+
   passport.deserializeUser(function (id, done) {
     UserModel.findById(id, function (err, user) {
       done(err, user);
     });
   });
+
   passport.use(
     new GoogleStrategy(
       {
@@ -18,6 +21,7 @@ module.exports = (passport) => {
       },
       function (accessToken, refreshToken, profile, cb) {
         console.log(profile);
+
         UserModel.findOne({ googleId: profile.id }, async function (err, user) {
           if (user) {
             const updatedUser = {
@@ -26,6 +30,7 @@ module.exports = (passport) => {
               pic: profile.photos[0].value,
               secret: accessToken,
             };
+
             await UserModel.findOneAndUpdate(
               { _id: user.id },
               { $set: updatedUser },
@@ -36,11 +41,12 @@ module.exports = (passport) => {
           } else {
             const newUser = new UserModel({
               googleId: profile.id,
-              username: profile.displayName,
+              fullname: profile.displayName, // Remplacez 'username' par 'fullname'
               email: profile.emails[0].value,
               pic: profile.photos[0].value,
               secret: accessToken,
             });
+
             newUser.save().then((result) => {
               return cb(err, result);
             });
